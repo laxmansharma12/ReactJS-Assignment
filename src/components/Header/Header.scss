@@ -1,0 +1,78 @@
+.main {
+	h1 {
+		font-size: 48px;
+		line-height: 60px;
+		font-weight: 400;
+		color: #2c384a;
+		font-size: 3rem;
+		margin-bottom: 0.5rem;
+	}
+	.hr {
+		height: 2px;
+		background-color: #e1e4e6;
+	}
+	.wrapperUp {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 0.6rem 0;
+		.left {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			gap: 2rem;
+			.leftInner {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				gap: 0.5rem;
+				font-size: 14px;
+				font-weight: 400;
+				line-height: 20px;
+				color: #4b5665;
+			}
+		}
+		.right {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			gap: 0.5rem;
+			font-size: 14px;
+			font-weight: 400;
+			line-height: 20px;
+			color: #4b5665;
+		}
+	}
+	.wrapperMid {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		height: 70px;
+		width: 80%;
+		div {
+			display: flex;
+			justify-content: start;
+			align-items: center;
+			padding: 0.5rem 2rem 0.5rem 1rem;
+			font-size: 14px;
+			font-weight: 400;
+			line-height: 20px;
+			color: #4b5665;
+			border-radius: 12px;
+			background-color: #ffffff;
+		}
+	}
+	.wrapperDown {
+		display: flex;
+		justify-content: start;
+		align-items: center;
+		gap: 0.5rem;
+		margin-left: 1rem;
+		label {
+			font-size: 13px;
+			font-weight: 400;
+			line-height: 20px;
+			color: #727d87;
+		}
+	}
+}
