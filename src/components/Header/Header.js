@@ -22,7 +22,7 @@ const Header = () => {
 					</div>
 				</div>
 				<div className="right">
-					<labe>Top Relevant</labe>
+					<label>Top Relevant</label>
 					<IoIosArrowDown color="#626E79" />
 				</div>
 			</div>

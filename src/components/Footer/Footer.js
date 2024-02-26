@@ -21,12 +21,12 @@ const Footer = () => {
 					<a>Categories</a>
 					<a>About</a>
 				</div>
-				<di className="listContainer">
+				<div className="listContainer">
 					<div className="item">
 						<a>United States</a>
 						<IoIosArrowDown style={{ color: "#b6bdc4" }} />
 					</div>
-				</di>
+				</div>
 			</div>
 		</div>
 	);
