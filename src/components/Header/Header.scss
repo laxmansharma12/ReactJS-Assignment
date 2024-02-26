@@ -39,7 +39,7 @@ $mobile: 640px;
 	.wrapperUp {
 		@include flex(row, 0rem, space-between);
 		@media screen and (max-width: $mobile) {
-			@include flex(row, 1rem, space-between);
+			@include flex(row, 2rem, space-between);
 		}
 		padding: 0.6rem 0;
 		.left {
@@ -50,8 +50,13 @@ $mobile: 640px;
 			.leftInner {
 				@include fontStyle;
 				@include flex(row, 0.5rem, space-between);
+				.iconInfo {
+					font-size: 16px;
+					@media screen and (max-width: $mobile) {
+						font-size: 12px;
+					}
+				}
 				@media screen and (max-width: $mobile) {
-					@include flex(row, 0.3rem, space-between);
 					font-size: 10px;
 					line-height: 16px;
 				}
@@ -74,6 +79,9 @@ $mobile: 640px;
 		@media screen and (max-width: $mobile) {
 			@include flex(row, 1rem, start);
 			width: 100%;
+			overflow-x: hidden;
+		}
+		&:hover {
 			overflow-x: scroll;
 		}
 		label {
@@ -93,6 +101,9 @@ $mobile: 640px;
 		@include flex(row, 0.5rem, start);
 		margin-left: 1rem;
 		@media screen and (max-width: $mobile) {
+			overflow-x: hidden;
+		}
+		&:hover {
 			overflow-x: scroll;
 		}
 		label {

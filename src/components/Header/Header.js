@@ -17,7 +17,7 @@ const Header = () => {
 						<label>Last Updated - February 22, 2020</label>
 					</div>
 					<div className="leftInner">
-						<IoInformationCircleOutline size={20} color="#626E79" />
+						<IoInformationCircleOutline className="iconInfo" color="#626E79" />
 						<label>Advertising Disclosure</label>
 					</div>
 				</div>
