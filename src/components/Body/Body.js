@@ -27,7 +27,13 @@ const Body = () => {
 											style={{ backgroundColor: "transparent" }}
 										></div>
 									)}
-									<div className="no">{item.no}</div>
+									{item.no === "1" ? (
+										<div className="no" style={{ borderColor: "#fff" }}>
+											{item.no}
+										</div>
+									) : (
+										<div className="no">{item.no}</div>
+									)}
 								</div>
 							))}
 
