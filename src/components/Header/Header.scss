@@ -80,10 +80,11 @@ $mobile: 640px;
 			@include flex(row, 1rem, start);
 			width: 100%;
 			overflow-x: hidden;
+			&:hover {
+				overflow-x: scroll;
+			}
 		}
-		&:hover {
-			overflow-x: scroll;
-		}
+
 		label {
 			@include fontStyle;
 			@include flex(row, 0rem, start);
@@ -102,10 +103,11 @@ $mobile: 640px;
 		margin-left: 1rem;
 		@media screen and (max-width: $mobile) {
 			overflow-x: hidden;
+			&:hover {
+				overflow-x: scroll;
+			}
 		}
-		&:hover {
-			overflow-x: scroll;
-		}
+
 		label {
 			@include fontStyle;
 			font-size: 13px;
