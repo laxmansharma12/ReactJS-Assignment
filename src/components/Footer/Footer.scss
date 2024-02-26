@@ -38,6 +38,7 @@ $mobile: 640px;
 			@media screen and (max-width: $mobile) {
 				@include flex(column, 0.5rem, center);
 				align-items: start;
+				width: 80px;
 			}
 			.Title {
 				@include fontStyle(16px);
