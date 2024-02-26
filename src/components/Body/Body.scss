@@ -20,7 +20,7 @@ $mobile: 640px;
 	height: fit-content;
 	@media screen and (max-width: $mobile) {
 		width: 89%;
-		border: 1px solid red;
+		// border: 1px solid red;
 	}
 	.subWrapper {
 		@include flex(column, 2rem, space-between, start);
@@ -34,24 +34,33 @@ $mobile: 640px;
 			width: 1024px;
 			@media screen and (max-width: $mobile) {
 				width: 100%;
-				border: 1px solid black;
+				height: fit-content;
 			}
 			.itemBody {
 				@include flex(row, 0, space-between, center);
 				position: relative;
 				height: 218px;
 				width: 100%;
+				@media screen and (max-width: $mobile) {
+					@include flex(column, 0, space-between, center);
+					height: fit-content;
+				}
 				.bodyContainer {
 					height: 218px;
 					width: 505px;
 					padding-left: 2rem;
 					@media screen and (max-width: $mobile) {
-						width: 200px;
-						border: 1px solid black;
+						height: fit-content;
+						width: 100%;
+						padding-left: 1rem;
 					}
 					.mainDetails {
 						height: 72px;
 						width: 490px;
+						@media screen and (max-width: $mobile) {
+							height: fit-content;
+							width: 100%;
+						}
 					}
 
 					.subHeadingContainer {
@@ -64,7 +73,8 @@ $mobile: 640px;
 							color: #4b5665;
 							margin-left: 1rem;
 							@media screen and (max-width: $mobile) {
-								@include fontStyle(14px, 400, 20px);
+								@include fontStyle(13px, 400, 20px);
+								width: 90%;
 							}
 						}
 					}
@@ -75,11 +85,11 @@ $mobile: 640px;
 		.tag {
 			@include flex(column, 12px, space-between, start);
 			position: absolute;
-			top: 0;
 			top: -2rem;
 			left: -1rem;
 			@media screen and (max-width: $mobile) {
 				left: -0.8rem;
+				top: -0.7rem;
 			}
 			.title {
 				@include flex(row, 0.5rem, center, center);
@@ -116,40 +126,47 @@ $mobile: 640px;
 			@include flex(column, 1rem, center, center);
 			height: 218px;
 			width: 218px;
-			// @media screen and (max-width: $mobile) {
-			// 	height: 218px;
-			// 	max-width: 60px;
-			// 	width: 100%;
-			// 	border: 1px solid green;
-			// }
+			@media screen and (max-width: $mobile) {
+				height: fit-content;
+				padding: 1rem 0;
+				width: 100%;
+			}
 			img {
-				height: 23px;
-				width: 21px;
-				@media screen and (max-width: $mobile) {
-					height: 23px;
-					width: 21px;
-				}
+				height: 103px;
+				width: 141px;
 			}
 			label {
-				@include fontStyle(13px, 400, 28px);
+				@media screen and (max-width: $mobile) {
+					@include fontStyle(13px, 400, 28px);
+				}
 			}
 		}
 
 		.heading {
 			@include fontStyle(16px, 700, 24px);
 			color: #4b5665;
+			@media screen and (max-width: $mobile) {
+				@include fontStyle(13px, 700, 24px);
+			}
 		}
 		.details {
 			@include fontStyle(16px, 400, 24px);
 			width: 490px;
 			height: 72px;
 			color: #4b5665;
+			@media screen and (max-width: $mobile) {
+				@include fontStyle(13px, 400, 24px);
+				width: 100%;
+			}
 		}
 
 		.subheading {
 			margin-top: 0;
 			color: #2c384a;
 			@include fontStyle(16px, 700, 24px);
+			@media screen and (max-width: $mobile) {
+				@include fontStyle(13px, 700, 24px);
+			}
 		}
 
 		.showMore {
@@ -157,6 +174,9 @@ $mobile: 640px;
 			@include fontStyle(16px, 400, 24px);
 			margin-top: 1.7rem;
 			color: #1b88f4;
+			@media screen and (max-width: $mobile) {
+				@include fontStyle(13px, 400, 24px);
+			}
 		}
 
 		.ratingContainer {
@@ -165,6 +185,11 @@ $mobile: 640px;
 			height: 218px;
 			width: 232px;
 			margin-right: 1.5rem;
+			@media screen and (max-width: $mobile) {
+				height: fit-content;
+				width: 100%;
+				margin-right: 0;
+			}
 			.ratingBanner {
 				@include flex(column, 0, start, center);
 				position: absolute;
@@ -173,19 +198,35 @@ $mobile: 640px;
 				width: 135px;
 				border-radius: 0 0 12px 12px;
 				background-color: #f3f9ff;
+				@media screen and (max-width: $mobile) {
+					height: 80px;
+					top: -26.4rem;
+					left: 75%;
+					width: 69px;
+				}
 				.info {
 					position: absolute;
 					margin-left: 4rem;
 					color: #babec3;
+					@media screen and (max-width: $mobile) {
+						margin-left: 3rem;
+					}
 				}
 				.rate {
 					@include fontStyle(32px, 400, 48px);
 					color: #074786;
 					margin-top: 0.5rem;
+					@media screen and (max-width: $mobile) {
+						@include fontStyle(20px, 400, 25px);
+						margin-top: 0.5rem;
+					}
 				}
 				.label {
 					@include fontStyle(14px, 400, 20px);
 					color: #074786;
+					@media screen and (max-width: $mobile) {
+						@include fontStyle(11px, 400, 20px);
+					}
 				}
 				.stars {
 					color: #ffb80f;
@@ -200,6 +241,9 @@ $mobile: 640px;
 				color: #ffffff;
 				background-color: #1b88f4;
 				border-radius: 12px;
+				@media screen and (max-width: $mobile) {
+					margin: 1rem 0;
+				}
 			}
 		}
 
@@ -209,20 +253,37 @@ $mobile: 640px;
 			border-radius: 12px;
 			height: 436px;
 			width: 1024px;
+			@media screen and (max-width: $mobile) {
+				width: 100%;
+				height: fit-content;
+			}
 			.CDKitemBody {
 				@include flex(row, 0, space-between, center);
 				position: relative;
 				height: 382px;
 				width: 100%;
+				@media screen and (max-width: $mobile) {
+					@include flex(column, 0, space-between, center);
+					height: fit-content;
+				}
 				.bodyContainer {
 					display: flex;
 					flex-direction: column;
 					height: 382px;
 					width: 505px;
 					padding-left: 2rem;
+					@media screen and (max-width: $mobile) {
+						height: fit-content;
+						width: 100%;
+						padding-left: 1rem;
+					}
 					.mainDetails {
 						height: 48px;
 						width: 503px;
+						@media screen and (max-width: $mobile) {
+							height: fit-content;
+							width: 100%;
+						}
 					}
 
 					.offer {
@@ -234,6 +295,10 @@ $mobile: 640px;
 						background-color: #f2f4f7;
 						color: #074786;
 						size: 13px;
+						@media screen and (max-width: $mobile) {
+							height: fit-content;
+							size: 10px;
+						}
 					}
 
 					.subHeadingContainer {
@@ -246,6 +311,9 @@ $mobile: 640px;
 							border-radius: 12px;
 							margin-left: 1rem;
 							background-color: #fff4ed;
+							@media screen and (max-width: $mobile) {
+								width: 280px;
+							}
 							.list {
 								@include flex(row, 0.5rem, space-around, center);
 								margin-left: 0.5rem;
@@ -257,10 +325,18 @@ $mobile: 640px;
 									border-radius: 4px;
 									background-color: #ffffff;
 									color: #1b88f4;
+									@media screen and (max-width: $mobile) {
+										@include fontStyle(13px, 400, 24px);
+										height: 20px;
+										width: 30px;
+									}
 								}
 								label {
 									@include fontStyle(16px, 400, 24px);
 									color: #4b5665;
+									@media screen and (max-width: $mobile) {
+										@include fontStyle(13px, 400, 24px);
+									}
 								}
 							}
 						}
@@ -271,6 +347,9 @@ $mobile: 640px;
 							@include fontStyle(16px, 400, 24px);
 							color: #2c384a;
 							margin: 1rem 0;
+							@media screen and (max-width: $mobile) {
+								@include fontStyle(13px, 400, 24px);
+							}
 						}
 						.list {
 							@include flex(row, 0.5rem, start, center);
@@ -282,10 +361,18 @@ $mobile: 640px;
 								background-color: #ebf5ff;
 								border-radius: 50%;
 								color: #0855a1;
+								@media screen and (max-width: $mobile) {
+									@include fontStyle(13px, 400, 24px);
+									height: 20px;
+									width: 20px;
+								}
 							}
 							label {
 								@include fontStyle(15px, 400, 24px);
 								color: #4b5665;
+								@media screen and (max-width: $mobile) {
+									@include fontStyle(12px, 400, 24px);
+								}
 							}
 						}
 					}
@@ -296,8 +383,12 @@ $mobile: 640px;
 				.ratingContainer {
 					height: 382px;
 					width: 232px;
+					@media screen and (max-width: $mobile) {
+						height: fit-content;
+					}
 					.ratingBanner {
-						top: -1.7rem;
+						top: -37.5rem;
+						left: 85%;
 					}
 				}
 			}
@@ -305,9 +396,19 @@ $mobile: 640px;
 
 		h1.relatedHeader {
 			margin: 3rem 0 0;
+			@media screen and (max-width: $mobile) {
+				font-size: 30px;
+				width: 100%;
+				text-align: center;
+				line-height: 40px;
+			}
 		}
 		.relatedDealContainer {
 			@include flex(row, 1rem, center, center);
+			@media screen and (max-width: $mobile) {
+				width: 100%;
+				// border: 1px solid black;
+			}
 		}
 
 		.signUpContainer {
@@ -315,11 +416,22 @@ $mobile: 640px;
 			width: 900px;
 			height: 171px;
 			margin-left: 4rem;
+			@media screen and (max-width: $mobile) {
+				@include flex(column, 0, space-around, center);
+				width: 100%;
+				margin: 0;
+			}
 			label {
 				@include fontStyle(32px, 400, 44px);
 				width: 398px;
 				height: 88px;
 				color: #5c6874;
+				@media screen and (max-width: $mobile) {
+					@include fontStyle(25px, 400, 40px);
+					text-align: center;
+					width: 100%;
+					height: fit-content;
+				}
 			}
 			.form {
 				@include flex(row, 0, center, center);
@@ -327,7 +439,10 @@ $mobile: 640px;
 				input {
 					height: 52px;
 					outline: none;
-					border: navajowhite;
+					border: none;
+					@media screen and (max-width: $mobile) {
+						height: 35px;
+					}
 				}
 				button {
 					@include fontStyle(14px, 400, 20px);
@@ -337,6 +452,10 @@ $mobile: 640px;
 					background-color: #1b88f4;
 					color: #ffffff;
 					border: none;
+					@media screen and (max-width: $mobile) {
+						@include fontStyle(11px, 400, 20px);
+						height: 35px;
+					}
 				}
 			}
 		}
