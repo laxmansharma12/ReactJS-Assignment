@@ -1,265 +1,219 @@
 $mobile: 640px;
 
+@mixin fontStyle($fontSize, $fontWeight, $lineHeight) {
+	font-size: $fontSize;
+	font-weight: $fontWeight;
+	line-height: $lineHeight;
+}
+
+@mixin flex($direction, $gap, $justifyContent, $alignItems) {
+	display: flex;
+	justify-content: $justifyContent;
+	align-items: $alignItems;
+	flex-direction: $direction;
+	gap: $gap;
+}
+
 .Wrapper {
 	margin: 0 auto;
 	width: 70%;
 	height: fit-content;
 	@media screen and (max-width: $mobile) {
 		width: 89%;
+		border: 1px solid red;
 	}
 	.subWrapper {
-		display: flex;
-		justify-content: space-between;
-		align-items: start;
+		@include flex(column, 2rem, space-between, start);
 		margin-top: 2rem;
-		flex-direction: column;
 		padding-bottom: 10px;
-		gap: 2rem;
 		.item {
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
+			@include flex(row, 0, space-between, center);
 			background-color: #ffffff;
 			border-radius: 12px;
 			height: 255px;
-
 			width: 1024px;
+			@media screen and (max-width: $mobile) {
+				width: 100%;
+				border: 1px solid black;
+			}
 			.itemBody {
-				display: flex;
+				@include flex(row, 0, space-between, center);
 				position: relative;
-				justify-content: space-between;
-				align-items: center;
 				height: 218px;
 				width: 100%;
-				.tag {
-					position: absolute;
-					display: flex;
-					justify-content: space-between;
-					align-items: start;
-					gap: 12px;
-					top: 0;
-					top: -2rem;
-					left: -1rem;
-					flex-direction: column;
-					.title {
-						display: flex;
-						justify-content: center;
-						align-items: center;
-						height: 34px;
-						gap: 0.5rem;
-						font-size: 16px;
-						width: 136px;
-						margin-left: 1rem;
-						color: #ffffff;
-						background-color: #ff7724;
-						border-radius: 0 8px 8px 0;
-					}
-					.no {
-						display: flex;
-						justify-content: center;
-						align-items: center;
-						height: 35px;
-						width: 35px;
-						font-size: 20px;
-						line-height: 28px;
-						font-weight: 400;
-						color: #626e79;
-						border: 1px solid #e1e4e6;
-						border-radius: 50%;
-						background-color: #ffffff;
-					}
-				}
-				.imgContainer {
-					display: flex;
-					justify-content: center;
-					align-items: center;
-					flex-direction: column;
-					gap: 1rem;
-					height: 218px;
-					width: 218px;
-					img {
-						height: 103px;
-						width: 141px;
-					}
-				}
 				.bodyContainer {
 					height: 218px;
 					width: 505px;
 					padding-left: 2rem;
+					@media screen and (max-width: $mobile) {
+						width: 200px;
+						border: 1px solid black;
+					}
 					.mainDetails {
 						height: 72px;
 						width: 490px;
-						.heading {
-							color: #4b5665;
-							font-weight: 700;
-							font-size: 16px;
-							line-height: 24px;
-						}
-						.details {
-							font-weight: 400;
-							font-size: 16px;
-							width: 490px;
-							height: 72px;
-							line-height: 24px;
-							color: #4b5665;
-						}
 					}
 
 					.subHeadingContainer {
 						height: 96px;
 						margin: auto;
-						.subheading {
-							margin-top: 0;
-							color: #2c384a;
-							font-weight: 700;
-							font-size: 16px;
-							line-height: 24px;
-						}
 						.subDetails {
+							@include fontStyle(16px, 400, 24px);
 							height: 72px;
 							width: 483px;
-							font-weight: 400;
-							font-size: 16px;
-							line-height: 24px;
 							color: #4b5665;
 							margin-left: 1rem;
+							@media screen and (max-width: $mobile) {
+								@include fontStyle(14px, 400, 20px);
+							}
 						}
-					}
-					.showMore {
-						display: flex;
-						justify-content: start;
-						align-items: center;
-						margin-top: 1.7rem;
-						gap: 5px;
-						font-weight: 400;
-						font-size: 16px;
-						color: #1b88f4;
-					}
-				}
-				.ratingContainer {
-					display: flex;
-					justify-content: end;
-					position: relative;
-					align-items: center;
-					flex-direction: column;
-					height: 218px;
-					width: 232px;
-					margin-right: 1.5rem;
-					.ratingBanner {
-						position: absolute;
-						display: flex;
-						justify-content: start;
-						align-items: center;
-						flex-direction: column;
-						height: 118px;
-						top: -1.2rem;
-						width: 135px;
-						border-radius: 0 0 12px 12px;
-						background-color: #f3f9ff;
-						.info {
-							position: absolute;
-							margin-left: 4rem;
-							color: #babec3;
-						}
-						.rate {
-							color: #074786;
-							font-weight: 400;
-							margin-top: 0.5rem;
-							line-height: 48px;
-							font-size: 32px;
-						}
-						.label {
-							font-weight: 400;
-							font-size: 14px;
-							line-height: 20px;
-							color: #074786;
-						}
-						.stars {
-							color: #ffb80f;
-						}
-					}
-					button {
-						font-size: 16px;
-						font-weight: 400;
-						line-height: 24px;
-						text-align: center;
-						height: 48px;
-						width: 232px;
-						border: none;
-						color: #ffffff;
-						background-color: #1b88f4;
-						border-radius: 12px;
 					}
 				}
 			}
 		}
 
+		.tag {
+			@include flex(column, 12px, space-between, start);
+			position: absolute;
+			top: 0;
+			top: -2rem;
+			left: -1rem;
+			@media screen and (max-width: $mobile) {
+				left: -0.8rem;
+			}
+			.title {
+				@include flex(row, 0.5rem, center, center);
+				height: 34px;
+				font-size: 16px;
+				width: 136px;
+				margin-left: 1rem;
+				color: #ffffff;
+				background-color: #ff7724;
+				border-radius: 0 8px 8px 0;
+				@media screen and (max-width: $mobile) {
+					height: 20px;
+					font-size: 13px;
+					width: 106px;
+				}
+			}
+			.no {
+				@include flex(row, 0, center, center);
+				@include fontStyle(20px, 400, 28px);
+				height: 35px;
+				width: 35px;
+				color: #626e79;
+				border: 1px solid #e1e4e6;
+				border-radius: 50%;
+				background-color: #ffffff;
+				@media screen and (max-width: $mobile) {
+					@include fontStyle(17px, 400, 28px);
+					height: 25px;
+					width: 25px;
+				}
+			}
+		}
+		.imgContainer {
+			@include flex(column, 1rem, center, center);
+			height: 218px;
+			width: 218px;
+			// @media screen and (max-width: $mobile) {
+			// 	height: 218px;
+			// 	max-width: 60px;
+			// 	width: 100%;
+			// 	border: 1px solid green;
+			// }
+			img {
+				height: 23px;
+				width: 21px;
+				@media screen and (max-width: $mobile) {
+					height: 23px;
+					width: 21px;
+				}
+			}
+			label {
+				@include fontStyle(13px, 400, 28px);
+			}
+		}
+
+		.heading {
+			@include fontStyle(16px, 700, 24px);
+			color: #4b5665;
+		}
+		.details {
+			@include fontStyle(16px, 400, 24px);
+			width: 490px;
+			height: 72px;
+			color: #4b5665;
+		}
+
+		.subheading {
+			margin-top: 0;
+			color: #2c384a;
+			@include fontStyle(16px, 700, 24px);
+		}
+
+		.showMore {
+			@include flex(row, 5px, start, center);
+			@include fontStyle(16px, 400, 24px);
+			margin-top: 1.7rem;
+			color: #1b88f4;
+		}
+
+		.ratingContainer {
+			@include flex(column, 0, end, center);
+			position: relative;
+			height: 218px;
+			width: 232px;
+			margin-right: 1.5rem;
+			.ratingBanner {
+				@include flex(column, 0, start, center);
+				position: absolute;
+				height: 118px;
+				top: -1.2rem;
+				width: 135px;
+				border-radius: 0 0 12px 12px;
+				background-color: #f3f9ff;
+				.info {
+					position: absolute;
+					margin-left: 4rem;
+					color: #babec3;
+				}
+				.rate {
+					@include fontStyle(32px, 400, 48px);
+					color: #074786;
+					margin-top: 0.5rem;
+				}
+				.label {
+					@include fontStyle(14px, 400, 20px);
+					color: #074786;
+				}
+				.stars {
+					color: #ffb80f;
+				}
+			}
+			button {
+				@include fontStyle(16px, 400, 24px);
+				text-align: center;
+				height: 48px;
+				width: 232px;
+				border: none;
+				color: #ffffff;
+				background-color: #1b88f4;
+				border-radius: 12px;
+			}
+		}
+
 		.CDKitem {
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
+			@include flex(row, 0, space-between, center);
 			background-color: #ffffff;
 			border-radius: 12px;
 			height: 436px;
 			width: 1024px;
 			.CDKitemBody {
-				display: flex;
+				@include flex(row, 0, space-between, center);
 				position: relative;
-				justify-content: space-between;
-				align-items: center;
 				height: 382px;
 				width: 100%;
-				.tag {
-					position: absolute;
-					display: flex;
-					justify-content: space-between;
-					align-items: start;
-					gap: 12px;
-					top: 0;
-					top: -2rem;
-					left: -1rem;
-					flex-direction: column;
-					.title {
-						display: flex;
-						justify-content: center;
-						align-items: center;
-						height: 34px;
-						gap: 0.5rem;
-						font-size: 16px;
-						width: 136px;
-						margin-left: 1rem;
-						color: #ffffff;
-						background-color: #ff7724;
-						border-radius: 0 8px 8px 0;
-					}
-					.no {
-						display: flex;
-						justify-content: center;
-						align-items: center;
-						height: 35px;
-						width: 35px;
-						font-size: 20px;
-						line-height: 28px;
-						font-weight: 400;
-						color: #626e79;
-						border: 1px solid #e1e4e6;
-						border-radius: 50%;
-						background-color: #ffffff;
-					}
-				}
-				.imgContainer {
-					display: flex;
-					justify-content: center;
-					align-items: center;
-					flex-direction: column;
-					gap: 1rem;
-					height: 382px;
-					width: 218px;
-					img {
-						height: 103px;
-						width: 141px;
-					}
-				}
 				.bodyContainer {
 					display: flex;
 					flex-direction: column;
@@ -269,78 +223,43 @@ $mobile: 640px;
 					.mainDetails {
 						height: 48px;
 						width: 503px;
-						.heading {
-							color: #4b5665;
-							font-weight: 700;
-							font-size: 16px;
-							line-height: 24px;
-						}
-						.details {
-							font-weight: 400;
-							font-size: 16px;
-							width: 490px;
-							height: 72px;
-							line-height: 24px;
-							color: #4b5665;
-						}
 					}
 
 					.offer {
-						display: flex;
-						justify-content: center;
-						align-items: center;
+						@include flex(row, 0, center, center);
+						@include fontStyle("", 400, 20px);
 						height: 26px;
 						width: 61px;
 						border-radius: 4px;
 						background-color: #f2f4f7;
 						color: #074786;
-						font-weight: 400;
 						size: 13px;
-						line-height: 20px;
 					}
 
 					.subHeadingContainer {
 						margin: auto;
-						.subheading {
-							margin-top: 0;
-							color: #2c384a;
-							font-weight: 700;
-							font-size: 16px;
-							line-height: 24px;
-						}
+						margin-left: 0;
 						.subSDKDetails {
-							display: flex;
-							justify-content: space-around;
-							align-items: start;
-							flex-direction: column;
+							@include flex(column, 0, space-around, start);
 							height: 116px;
-							width: 505px;
+							width: 470px;
 							border-radius: 12px;
 							margin-left: 1rem;
 							background-color: #fff4ed;
 							.list {
-								display: flex;
-								justify-content: space-around;
-								align-items: center;
-								gap: 0.5rem;
+								@include flex(row, 0.5rem, space-around, center);
 								margin-left: 0.5rem;
 								.num {
-									display: flex;
-									justify-content: center;
-									align-items: center;
+									@include flex(row, 0, center, center);
+									@include fontStyle(16px, 400, 24px);
 									height: 28px;
 									width: 40px;
 									border-radius: 4px;
 									background-color: #ffffff;
-									font-size: 16px;
-									font-weight: 400;
-									line-height: 24px;
 									color: #1b88f4;
 								}
 								label {
-									font-size: 16px;
-									line-height: 24px;
-									font-weight: 400;
+									@include fontStyle(16px, 400, 24px);
 									color: #4b5665;
 								}
 							}
@@ -349,22 +268,15 @@ $mobile: 640px;
 
 					.whyContainer {
 						.subWhyheading {
-							font-size: 16px;
-							font-weight: 400;
-							line-height: 24px;
+							@include fontStyle(16px, 400, 24px);
 							color: #2c384a;
 							margin: 1rem 0;
 						}
 						.list {
-							display: flex;
-							justify-content: start;
-							align-items: center;
-							gap: 0.5rem;
+							@include flex(row, 0.5rem, start, center);
 							margin-bottom: 0.5rem;
 							.icon {
-								display: flex;
-								justify-content: center;
-								align-items: center;
+								@include flex(row, 0, center, center);
 								height: 24px;
 								width: 24px;
 								background-color: #ebf5ff;
@@ -372,73 +284,20 @@ $mobile: 640px;
 								color: #0855a1;
 							}
 							label {
-								font-size: 15px;
-								font-weight: 400;
-								line-height: 24px;
+								@include fontStyle(15px, 400, 24px);
 								color: #4b5665;
 							}
 						}
 					}
-
 					.showMore {
-						display: flex;
-						justify-content: start;
-						align-items: center;
-						gap: 5px;
-						font-weight: 400;
-						font-size: 16px;
-						color: #1b88f4;
+						margin-top: 0;
 					}
 				}
 				.ratingContainer {
-					display: flex;
-					justify-content: end;
-					position: relative;
-					align-items: center;
-					flex-direction: column;
 					height: 382px;
 					width: 232px;
-					margin-right: 1.5rem;
 					.ratingBanner {
-						position: absolute;
-						display: flex;
-						justify-content: start;
-						align-items: center;
-						flex-direction: column;
-						height: 118px;
 						top: -1.7rem;
-						width: 135px;
-						border-radius: 0 0 12px 12px;
-						background-color: #f3f9ff;
-
-						.rate {
-							color: #074786;
-							font-weight: 400;
-							margin-top: 0.5rem;
-							line-height: 48px;
-							font-size: 32px;
-						}
-						.label {
-							font-weight: 400;
-							font-size: 14px;
-							line-height: 20px;
-							color: #074786;
-						}
-						.stars {
-							color: #ffb80f;
-						}
-					}
-					button {
-						font-size: 16px;
-						font-weight: 400;
-						line-height: 24px;
-						text-align: center;
-						height: 48px;
-						width: 232px;
-						border: none;
-						color: #ffffff;
-						background-color: #1b88f4;
-						border-radius: 12px;
 					}
 				}
 			}
@@ -448,31 +307,22 @@ $mobile: 640px;
 			margin: 3rem 0 0;
 		}
 		.relatedDealContainer {
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			gap: 1rem;
+			@include flex(row, 1rem, center, center);
 		}
 
 		.signUpContainer {
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
+			@include flex(row, 0, space-between, center);
 			width: 900px;
 			height: 171px;
 			margin-left: 4rem;
 			label {
-				font-size: 32px;
-				font-weight: 400;
-				line-height: 44px;
+				@include fontStyle(32px, 400, 44px);
 				width: 398px;
 				height: 88px;
 				color: #5c6874;
 			}
 			.form {
-				display: flex;
-				justify-content: center;
-				align-items: center;
+				@include flex(row, 0, center, center);
 
 				input {
 					height: 52px;
@@ -480,14 +330,13 @@ $mobile: 640px;
 					border: navajowhite;
 				}
 				button {
+					@include fontStyle(14px, 400, 20px);
 					width: 97px;
 					height: 52px;
-					font-size: 14px;
-					font-weight: 400;
-					line-height: 20px;
 					border-radius: 0 12px 12px 0;
 					background-color: #1b88f4;
 					color: #ffffff;
+					border: none;
 				}
 			}
 		}
