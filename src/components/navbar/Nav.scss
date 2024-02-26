@@ -16,9 +16,8 @@ $mobile: 640px;
 	width: 100%;
 	background-color: #212731;
 	@media screen and (max-width: $mobile) {
-		@include flex(row, 0rem);
+		@include flex(row, 3rem);
 		justify-content: space-around;
-		gap: 3rem;
 	}
 	.search {
 		@include flex(row, 5px);

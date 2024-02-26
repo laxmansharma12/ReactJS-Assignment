@@ -1,8 +1,12 @@
+$mobile: 640px;
+
 .Wrapper {
 	margin: 0 auto;
 	width: 70%;
 	height: fit-content;
-
+	@media screen and (max-width: $mobile) {
+		width: 89%;
+	}
 	.subWrapper {
 		display: flex;
 		justify-content: space-between;

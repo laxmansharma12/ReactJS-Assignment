@@ -1,3 +1,19 @@
+$mobile: 640px;
+
+@mixin fontStyle {
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 20px;
+	color: #4b5665;
+}
+@mixin flex($direction, $gap, $justifyContent) {
+	display: flex;
+	justify-content: $justifyContent;
+	align-items: center;
+	flex-direction: $direction;
+	gap: $gap;
+}
+
 .main {
 	h1 {
 		font-size: 48px;
@@ -6,72 +22,50 @@
 		color: #2c384a;
 		font-size: 3rem;
 		margin-bottom: 0.5rem;
+		@media screen and (max-width: $mobile) {
+			font-size: 30px;
+			width: 100%;
+			text-align: center;
+			line-height: 40px;
+		}
 	}
 	.hr {
 		height: 2px;
 		background-color: #e1e4e6;
 	}
 	.wrapperUp {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
+		@include flex(row, 0rem, space-between);
 		padding: 0.6rem 0;
 		.left {
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-			gap: 2rem;
+			@include flex(row, 2rem, space-between);
 			.leftInner {
-				display: flex;
-				justify-content: space-between;
-				align-items: center;
-				gap: 0.5rem;
-				font-size: 14px;
-				font-weight: 400;
-				line-height: 20px;
-				color: #4b5665;
+				@include fontStyle;
+				@include flex(row, 0.5rem, space-between);
 			}
 		}
 		.right {
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-			gap: 0.5rem;
-			font-size: 14px;
-			font-weight: 400;
-			line-height: 20px;
-			color: #4b5665;
+			@include fontStyle;
+			@include flex(row, 0.5rem, space-between);
 		}
 	}
 	.wrapperMid {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
+		@include flex(row, 0rem, space-between);
 		height: 70px;
 		width: 80%;
 		div {
-			display: flex;
-			justify-content: start;
-			align-items: center;
+			@include fontStyle;
+			@include flex(row, 0rem, start);
 			padding: 0.5rem 2rem 0.5rem 1rem;
-			font-size: 14px;
-			font-weight: 400;
-			line-height: 20px;
-			color: #4b5665;
 			border-radius: 12px;
 			background-color: #ffffff;
 		}
 	}
 	.wrapperDown {
-		display: flex;
-		justify-content: start;
-		align-items: center;
-		gap: 0.5rem;
+		@include flex(row, 0.5rem, start);
 		margin-left: 1rem;
 		label {
+			@include fontStyle;
 			font-size: 13px;
-			font-weight: 400;
-			line-height: 20px;
 			color: #727d87;
 		}
 	}
