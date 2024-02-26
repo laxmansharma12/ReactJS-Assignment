@@ -407,7 +407,7 @@ $mobile: 640px;
 			@include flex(row, 1rem, center, center);
 			@media screen and (max-width: $mobile) {
 				width: 100%;
-				// border: 1px solid black;
+				@include flex(column, 1rem, center, center);
 			}
 		}
 
