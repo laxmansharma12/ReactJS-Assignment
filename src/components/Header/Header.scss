@@ -39,7 +39,7 @@ $mobile: 640px;
 	.wrapperUp {
 		@include flex(row, 0rem, space-between);
 		@media screen and (max-width: $mobile) {
-			@include flex(row, 2rem, space-between);
+			@include flex(row, 0rem, start);
 		}
 		padding: 0.6rem 0;
 		.left {
