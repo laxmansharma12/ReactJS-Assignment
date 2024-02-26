@@ -28,12 +28,12 @@ const Header = () => {
 			</div>
 			<div className="hr"></div>
 			<div className="wrapperMid">
-				<div>Tools</div>
-				<div>AWS Builder</div>
-				<div>Start Build</div>
-				<div>Build Supplies</div>
-				<div>Tooling</div>
-				<div>BlueHosting</div>
+				<label>Tools</label>
+				<label>AWS Builder</label>
+				<label>Start Build</label>
+				<label>Build Supplies</label>
+				<label>Tooling</label>
+				<label>BlueHosting</label>
 			</div>
 			<div className="wrapperDown">
 				<label>Home</label>
